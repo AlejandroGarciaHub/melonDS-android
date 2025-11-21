@@ -18,7 +18,7 @@ class SramProvider(
         val romDocument = uriHandler.getUriDocument(rom.uri)
 
         val romFileName = romDocument?.name ?: throw SramLoadException("Cannot determine SRAM file name: ${romDocument?.uri}")
-        val sramFileName = romFileName.replaceAfterLast('.', "sav", "$romFileName.sav")
+        val sramFileName = romFileName.replaceAfterLast('.', "srm", "$romFileName.srm")
 
         val sramDocument = rootDocument.findFile(sramFileName)
         return if (sramDocument != null) {
